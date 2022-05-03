@@ -36,5 +36,5 @@ def verify_age(birthDate):
         
         return response_object
     except ValueError:
-        response_object = { "verified": verified, "error": "Invalid string format, please formate date as YYYY-MM-DD" }
+        response_object = { "verified": verified, "error": "Invalid string format, please format date as YYYY-MM-DD" }
         return response_object
