@@ -6,10 +6,6 @@
 #
 #   Returns: Json reponse object containing:
 #       Boolean verified
-#
-#
-
-
 
 from flask import Flask
 from datetime import datetime, timedelta, date
@@ -20,8 +16,8 @@ app = (Flask(__name__))
 
 @app.route("/verify_age/<birthDate>")
 def verify_age(birthDate):
+    verified = False
     try:
-        verified = False
 
         date_object = datetime.strptime(birthDate, "%Y-%m-%d")
         
@@ -36,8 +32,9 @@ def verify_age(birthDate):
         
         print("age: %d", age)
 
-        reponse_object = { "verified": verified }
+        response_object = { "verified": verified }
         
-        return reponse_object
+        return response_object
     except ValueError:
-        return "Invalid date format, please format strings as YYYY-MM-DD"
+        response_object = { "verified": verified, "error": "Invalid string format, please formate date as YYYY-MM-DD" }
+        return response_object
