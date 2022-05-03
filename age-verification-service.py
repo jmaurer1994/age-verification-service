@@ -4,8 +4,8 @@
 #   Receives: GET request to /verify_age/{birthDate}, where:
 #       string birthDate: YYYY-MM-DD format
 #
-#   Returns: verified
-#
+#   Returns: Json reponse object containing:
+#       Boolean verified
 #
 #
 
