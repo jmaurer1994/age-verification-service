@@ -27,14 +27,17 @@ def verify_age(birthDate):
 
         if(age >= 13):
             verified = True
-        else:
-            verified = False
-        
-        print("age: %d", age)
 
-        response_object = { "verified": verified }
-        
+        response_object = {
+            "verified" : verified,
+        }
+
         return response_object
-    except ValueError:
-        response_object = { "verified": verified, "error": "Invalid string format, please format date as YYYY-MM-DD" }
+        
+    except ValueError:        
+        response_object = {
+            "verified" : verified,
+            "error": "Invalid string format, please format date as YYYY-MM-DD" 
+        }
+
         return response_object
